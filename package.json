@@ -4,6 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/zelong-lin/koaMovie/issues"
   },
-  "homepage": "https://github.com/zelong-lin/koaMovie#readme"
+  "homepage": "https://github.com/zelong-lin/koaMovie#readme",
+  "dependencies": {
+    "koa": "^2.13.0"
+  }
 }
