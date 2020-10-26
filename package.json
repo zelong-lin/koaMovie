@@ -19,6 +19,7 @@
   "homepage": "https://github.com/zelong-lin/koaMovie#readme",
   "dependencies": {
     "ejs": "^3.1.5",
-    "koa": "^2.13.0"
+    "koa": "^2.13.0",
+    "pug": "^3.0.0"
   }
 }
