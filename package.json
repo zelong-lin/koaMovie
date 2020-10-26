@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/zelong-lin/koaMovie#readme",
   "dependencies": {
+    "ejs": "^3.1.5",
     "koa": "^2.13.0"
   }
 }
