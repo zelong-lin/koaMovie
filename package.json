@@ -21,9 +21,11 @@
     "ejs": "^3.1.5",
     "koa": "^2.13.0",
     "koa-views": "^6.3.1",
+    "nanoid": "^3.1.16",
     "parcel-bundler": "^1.12.4",
     "pug": "^3.0.0",
     "puppeteer": "^5.4.0",
+    "qiniu": "^7.3.2",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9"
   }

@@ -8,3 +8,4 @@ cnpm i
   parcel-bundler -S parcel打包工具（5-8）
   puppeteer -S  爬虫工具
   request-promise-native -S和request -S 异步请求
+  qiniu -S 和nanoid -S 上传七牛所需依赖
