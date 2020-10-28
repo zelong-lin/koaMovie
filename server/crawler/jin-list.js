@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 
-const url = `https://www.jin10.com/`
+const url = `https://rili.jin10.com/`
 
 const sleep = time => new Promise(resolve => {
   setTimeout(resolve, time)
@@ -20,19 +20,28 @@ const sleep = time => new Promise(resolve => {
   })
 
   await sleep(3000)
-  
+
+  await page.waitForSelector('#J_economics_tag')
+
+  for (let i = 0; i < 1; i++) {
+    await sleep(3000)
+    await page.click('#J_economics_tag')
+  }
+
   const result = await page.evaluate(() => {
-    let items = document.getElementsByClassName('jin-flash-item-container')
-    var links = []
+    var $ = window.$
+    let links = []
+    let items = $('#J_economicsWrap tr')
     if (items.length >= 1) {
-      for (let index = 0; index < items.length; index++) {
-        let item = items[index]
-        let right = item.getElementsByClassName('right-content')[0].getElementsByTagName('div')[0]
+      items.each((index, item) => {
+        let it = $(item)
+        let img = it.find('.jin-rili_content-country img').attr('src')
+        let main = it.find('.important a').attr('href')
         links.push({
-          time: item.getElementsByClassName('item-time')[0].innerText,
-          txt: right.innerText,
+          img,
+          main
         })
-      }
+      })
     }
     return links
   })
