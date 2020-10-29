@@ -1,4 +1,4 @@
-// 用户数据的schema
+// 用户表结构输出
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema

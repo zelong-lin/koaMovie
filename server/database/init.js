@@ -11,6 +11,24 @@ exports.initSchemas = () => {
   glob.sync(resolve(__dirname, './schema', '**/*.js')).forEach(require)
 }
 
+// 抛出管理员账号模块
+exports.initAdmin = async () => {
+  const User = mongoose.model('User')
+  let user = await User.findOne({
+    username: 'Scott'
+  })
+
+  if (!user) {
+    const user = new User({
+      username: 'Scott',
+      email: 'koa2@imooc.com',
+      password: '123abc'
+    })
+
+    await user.save()
+  }
+}
+
 // 启动mongoose的统一处理
 const db = 'mongodb://localhost/douban-test'
 exports.connect = () => {
