@@ -1,6 +1,8 @@
 // child_process 创建子进程爬取数据
 const cp = require('child_process')
 const { resolve } = require('path')
+const mongoose = require('mongoose')
+const Movie = mongoose.model('Movie')
 
 ;(async () => {
   const script = resolve(__dirname, '../crawler/trailer-list')
@@ -26,7 +28,15 @@ const { resolve } = require('path')
 
   child.on('message', data => {
     let result = data.result
+    result.forEach(async item => {
+      let movie = await Movie.findOne({ // 判断id是否存在
+        doubanId: item.doubanId
+      })
 
-    console.log(result)
+      if (!movie) {
+        movie = new Movie(item)  // 传入数据
+        await movie.save()  // 保存数据
+      }
+    })
   })
 })()
