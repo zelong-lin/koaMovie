@@ -2,14 +2,14 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema
 const Mixed = Schema.Types.Mixed
-const SALT_WORK_FACTOR = 10 // 加盐等级
-const MAX_LOGIN_ATTEMPTS = 5  // 输入错误密码次数限制
-const LOCK_TIME = 2 * 60 * 60 * 1000  // 锁定不能登录时间
+const SALT_WORK_FACTOR = 10
+const MAX_LOGIN_ATTEMPTS = 5
+const LOCK_TIME = 2 * 60 * 60 * 1000
 
 const userSchema = new Schema({
   username: {
-    unique: true, // 是否唯一
-    required: true, // 是否必填
+    unique: true,
+    required: true,
     type: String,
   },
   email: {
@@ -39,7 +39,6 @@ const userSchema = new Schema({
   }
 })
 
-// Schema的一种局部变量的定义方式
 userSchema.virtual('isLocked').get(function () {
   return !!(this.lockUntil && this.lockUntil > Date.now())
 })

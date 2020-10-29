@@ -10,3 +10,4 @@ cnpm i
   request-promise-native -S和request -S 异步请求
   qiniu -S 和nanoid -S 上传七牛所需依赖
   mongoose -S 对mongoDB进行CRUD操作
+  glob -S 对文件进行批量处理的中间件
