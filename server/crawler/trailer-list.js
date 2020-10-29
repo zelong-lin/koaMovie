@@ -1,3 +1,4 @@
+// 爬取电影列表数据的实现
 const puppeteer = require('puppeteer')
 
 const url = `https://movie.douban.com/tag/#/?sort=U&range=7,10&tags=`

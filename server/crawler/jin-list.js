@@ -1,3 +1,4 @@
+// 爬取某站的数据
 const puppeteer = require('puppeteer')
 
 const url = `https://rili.jin10.com/`

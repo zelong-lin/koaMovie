@@ -1,3 +1,4 @@
+// 分类的schema
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId // ObjectId mongoDB中的数据类型

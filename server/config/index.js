@@ -1,3 +1,4 @@
+// 七牛云的上传配置
 module.exports = {
   "qiniu": {
     "bucket": "koamovies",

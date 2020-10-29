@@ -1,3 +1,4 @@
+// 处理mongoose的通用工具方法
 const mongoose = require('mongoose')
 const db = 'mongodb://localhost/douban-test'
 const glob = require('glob')
