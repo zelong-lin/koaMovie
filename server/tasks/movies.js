@@ -1,5 +1,4 @@
-// child_process 创建子进程爬取数据
-// 爬取影片列表数据
+// child_process 创建子进程来爬取片列表数据
 const cp = require('child_process')
 const { resolve } = require('path')
 const mongoose = require('mongoose')

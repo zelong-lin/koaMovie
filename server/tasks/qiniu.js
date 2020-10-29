@@ -1,4 +1,4 @@
-// 上传数据到七牛，但是貌似七牛的npm包有问题
+// 上传数据到七牛，但是貌似七牛的npm包有问题,暂不关注
 const qiniu = require('qiniu')
 const nanoid = require('nanoid')
 const config = require('../config')

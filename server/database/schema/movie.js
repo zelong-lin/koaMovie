@@ -1,6 +1,8 @@
 // 电影数据的schema
 const mongoose = require('mongoose')
+// 创建schema
 const Schema = mongoose.Schema
+// 定义数据类型
 const { ObjectId, Mixed } = Schema.Types
 
 const movieSchema = new Schema({
@@ -31,7 +33,8 @@ const movieSchema = new Schema({
   year: Number,
 
   tags: [String],
-
+  
+  // 处理创建时间和更新时间
   meta: {
     createdAt: {
       type: Date,
@@ -43,7 +46,7 @@ const movieSchema = new Schema({
     }
   }
 })
-
+// 保存数据前的处理
 movieSchema.pre('save', function (next) {
   if (this.isNew) {
     this.meta.createdAt = this.meta.updatedAt = Date.now()
@@ -54,5 +57,5 @@ movieSchema.pre('save', function (next) {
   next()
 })
 
-
+// 创建模型
 mongoose.model('Movie', movieSchema)

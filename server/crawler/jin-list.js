@@ -2,14 +2,13 @@
 const puppeteer = require('puppeteer')
 
 const url = `https://rili.jin10.com/`
-
+// 延时
 const sleep = time => new Promise(resolve => {
   setTimeout(resolve, time)
 })
 
 ;(async () => {
-  console.log('Start visit the target page')
-
+  // Start visit the target page
   const browser = await puppeteer.launch({
     args: ['--no-sandbox'],
     dumpio: false
@@ -21,14 +20,15 @@ const sleep = time => new Promise(resolve => {
   })
 
   await sleep(3000)
-
+  // 等待dom渲染结束
   await page.waitForSelector('#J_economics_tag')
 
   for (let i = 0; i < 1; i++) {
     await sleep(3000)
+    // 模拟点击dom
     await page.click('#J_economics_tag')
   }
-
+  // 处理返回信息
   const result = await page.evaluate(() => {
     var $ = window.$
     let links = []

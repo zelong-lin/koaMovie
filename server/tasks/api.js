@@ -1,4 +1,5 @@
 // 由于豆瓣已经不支持私人获取电影详情数据了，所以这些代码仅供参考
+// 通过豆瓣api根据电影ID获取电影详情数据,并保存到数据库
 const rp = require('request-promise-native')
 const mongoose = require('mongoose')
 const Movie = mongoose.model('Movie')

@@ -1,4 +1,4 @@
-// 爬取视频url等信息
+// 采取子进程来爬取单个视频的详细信息
 const cp = require('child_process')
 const { resolve } = require('path')
 

@@ -1,9 +1,9 @@
 // 处理mongoose的通用工具方法
 const mongoose = require('mongoose')
-const db = 'mongodb://localhost/douban-test'
 const glob = require('glob')
 const { resolve } = require('path')
 
+// mongoose本身的Promise用户体验不好,故赋予全局的promise
 mongoose.Promise = global.Promise
 
 // 抛出model
@@ -11,6 +11,8 @@ exports.initSchemas = () => {
   glob.sync(resolve(__dirname, './schema', '**/*.js')).forEach(require)
 }
 
+// 启动mongoose的统一处理
+const db = 'mongodb://localhost/douban-test'
 exports.connect = () => {
   let maxConnectTimes = 0
 
