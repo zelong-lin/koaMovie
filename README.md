@@ -11,3 +11,4 @@ cnpm i
   qiniu -S 和nanoid -S 上传七牛所需依赖
   mongoose -S 对mongoDB进行CRUD操作
   glob -S 对文件进行批量处理的中间件
+  koa-router -S 路由插件
